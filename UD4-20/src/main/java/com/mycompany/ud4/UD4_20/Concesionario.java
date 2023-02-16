@@ -16,18 +16,16 @@ public class Concesionario {
     public String getNombre() {
         return nombre;
     }
-    
 
-    public void anadirVehiculo(Vehiculo v) {
-        vehiculos.add(v);
+    public void anadirVehiculo(Vehiculo c) {
+        vehiculos.add(c);
     }
 
-    public void actualizaVehiculo(Vehiculo v) {
+    public void actualizaVehiculo(Vehiculo c) {
         if (!vehiculos.isEmpty()) {
-            if (vehiculos.contains(v)) {
-                vehiculos.remove(v);
+            if (vehiculos.contains(c)) {
+                vehiculos.add(c);
             }
-            vehiculos.add(v);
         } else {
             System.out.println("Lista vacía");
         }
@@ -45,7 +43,7 @@ public class Concesionario {
         if (vehiculos.isEmpty()) {
             System.out.println("La lista está vacía");
         } else {
-            Iterator iter = vehiculos.iterator();
+            Iterator<Vehiculo> iter = vehiculos.iterator();
             while (iter.hasNext()) {
                 System.out.println(iter.next().toString());
             }
