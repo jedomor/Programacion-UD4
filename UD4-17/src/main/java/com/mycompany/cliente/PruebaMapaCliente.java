@@ -25,6 +25,7 @@ public class PruebaMapaCliente {
         conjuntoClientes.remove(c1.getIdCliente());
         
         System.out.println("Borrando cliente 2");
+        
         //traemos a cliente 2
         c2 = (Cliente) clientes.get(c2);
         //modificamos el nombre a cliente 2

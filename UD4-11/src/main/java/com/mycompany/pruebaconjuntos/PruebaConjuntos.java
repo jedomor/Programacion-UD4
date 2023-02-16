@@ -2,7 +2,7 @@ package com.mycompany.pruebaconjuntos;
 
 import java.util.*;
 
-public class PruebaConjuntos {
+public class PruebaConjuntos{
 
     public static void main(String[] args) {
 
