@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class Autor {
 
+    // hola
+    // que tal
     private final String nombre, apellido;
     private String nacionalidad;
 
