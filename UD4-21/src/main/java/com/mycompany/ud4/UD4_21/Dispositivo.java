@@ -6,11 +6,10 @@ public abstract class Dispositivo {
     private int tamanioPulgadas;
     private boolean estado;
 
-    public Dispositivo(String Marca, String Modelo, int tamanioPulgadas, boolean estado) {
+    public Dispositivo(String Marca, String Modelo, int tamanioPulgadas) {
         this.Marca = Marca;
         this.Modelo = Modelo;
         this.tamanioPulgadas = tamanioPulgadas;
-        this.estado = estado;
     }
 
     @Override
