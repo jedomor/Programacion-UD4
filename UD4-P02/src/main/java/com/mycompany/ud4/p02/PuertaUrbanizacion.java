@@ -4,12 +4,12 @@ import java.util.*;
 
 public class PuertaUrbanizacion {
 
-    private Map tarjetasPermitidas = new HashMap<Integer, Tarjeta>();
+    private Map <Integer, Tarjeta> tarjetasPermitidas;
     private Set<Tarjeta> tarjetasDentro;
 
     public PuertaUrbanizacion() {
         tarjetasDentro = new HashSet<>();
-        tarjetasPermitidas = new HashMap<Integer, Tarjeta>();
+        tarjetasPermitidas = new HashMap();
     }
 
     public void agregaTarjetaPermitida(Tarjeta t) {
