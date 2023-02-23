@@ -1,10 +1,10 @@
 package com.mycompany.ud4.UD4_22;
 
-public class Ganado implements Pesable {
+public class Madera implements Pesable {
 
     private double peso;
 
-    public Ganado(double peso) {
+    public Madera(double peso) {
         this.peso = peso;
     }
 

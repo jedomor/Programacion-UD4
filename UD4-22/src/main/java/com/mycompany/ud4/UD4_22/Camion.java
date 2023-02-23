@@ -5,7 +5,7 @@ public class Camion<T> {
     private T camion;
 
     public void cargarCamion(T carga) {
-        camion = carga;
+        this.camion = carga;
     }
 
     public T descargarCamion() {
@@ -15,14 +15,14 @@ public class Camion<T> {
     }
 
     public boolean estaVacio() {
-        return camion == null;
+        return camion != null;
     }
 
-    public double getKilosCarga (){
-        if (camion !=null){
+    public double getKilosCarga() {
+        if (camion != null) {
             Pesable peso = (Pesable) camion;
             return peso.getPeso();
-        }else{
+        } else {
             return 0;
         }
     }
