@@ -23,20 +23,24 @@ public class UserAccountManager {
     //si la contraseña no contiene al menos 8 caracteres devolverá otro mensaje de error y devolverá FALSE.
     //si ya existe el usuario devolverá otro mensaje de error indicando que el usuario ya existe y devolverá FALSE.
     //si las condiciones son correctas este creará un usuario, lo almacenará y devolverá TRUE.
-    public boolean createUser(String email, String password, String name) {
+    public boolean createUser(String email, String password, String name) throws EmailException, PasswordException, NameException {
         boolean validUser = true;
         if (registeredUsers.containsKey(email)) {
             System.out.println("ERROR: USER EMAIL ALREADY EXISTS");
             validUser = false;
+            throw new EmailException("Error: User email already exists");
         } else if (!email.contains("@")) {
             System.out.println("ERROR: USER EMAIL IS NOT A VALID MAIL (DOESN'T CONTAIN @)");
             validUser = false;
+            throw new EmailException("Error: Email doesn't contain @");
         } else if (password.length() < 8) {
             System.out.println("ERROR: USER PASSWORD IS SHORTER THAN 8 CHARACTERS");
             validUser = false;
+            throw new PasswordException("Error: Password is shorter than 8 characters");
         } else if (registeredUsers.containsValue(name)) {
             System.out.println("ERROR: USER WAS ALREADY A REGISTERED USER");
             validUser = false;
+            throw new NameException("Error: User already registered");
         } else {
             registeredUsers.put(email, new User(name, email, password.hashCode()));
             System.out.println("USER: " + name + " WITH EMAIL: " + email + " WITH PASS: " + password + " REGISTERED SUCCESFULLY");
@@ -124,7 +128,7 @@ public class UserAccountManager {
     }
 
     //Public void (run) que nos desplegará una lista de opciones que ejecutaran los metodos anteriores
-    public void run() {
+    public void run() throws EmailException, PasswordException, NameException {
         Scanner op = new Scanner(System.in);
         int option;
         String mail, name, pass;

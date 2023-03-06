@@ -3,7 +3,6 @@ package com.myapp;
 
 import java.util.Objects;
 
-
 public class User {
 
     //Declaración de las propiedades
@@ -13,13 +12,27 @@ public class User {
 
     //Constructor con los parametros
     public User(String name, String email, int hashedPassword) {
+        if (name.equalsIgnoreCase("")) {
+            throw new IllegalArgumentException("Name cannot be blank");
+        }
+        if (name == null) {
+            throw new NullPointerException("Name cannot be null");
+        }
+        if (email.equalsIgnoreCase("")) {
+            throw new IllegalArgumentException("Email cannot be blank");
+        }
+        if (email == null) {
+            throw new NullPointerException("Email cannot be null");
+        }
+        if (hashedPassword<8){
+            throw new IllegalArgumentException("El password debe tener almenos ocho caracteres" );
+        }
         this.name = name;
         this.email = email;
         this.hashedPassword = hashedPassword;
     }
 
     //Equals y Hash code para comparar los email
-
     @Override
     public int hashCode() {
         int hash = 5;
@@ -41,7 +54,6 @@ public class User {
         final User other = (User) obj;
         return Objects.equals(this.email, other.email);
     }
-
 
     //ToString que nos mostrará los mensajes
     @Override

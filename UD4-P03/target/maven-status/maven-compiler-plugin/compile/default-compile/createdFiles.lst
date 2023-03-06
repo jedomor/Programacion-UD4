@@ -1,3 +1,4 @@
-com\myapp\UserAccountManager.class
 com\myapp\User.class
 com\myapp\Application.class
+com\myapp\EmailException.class
+com\myapp\PasswordException.class
